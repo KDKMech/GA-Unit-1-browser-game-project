@@ -1,0 +1,74 @@
+body {
+    /* background-image: url('/SRCIMG/graassland.png'); */
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    overflow: hidden;
+    /* adjust body to make the width of the browser the whole game. or lock the browser size */
+}
+.menuContainer {
+    grid-row-start: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+#title {
+    /* align-self: center; */
+    /* align-items: center; */
+    align-content: center;
+    color: black;
+}
+#menuList {
+    grid-column-start: 3;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+
+
+/* ============================================================================================================== */
+
+/* game container */
+#gameContainer {
+    /* background-color: green; */
+    display: flex;
+    justify-content: space-between;
+    width: 100vw;
+}
+
+/* castles */
+.castle {
+    height: 50vh;
+    width: 20vw;
+    background-color: black;
+}
+
+#playerCastle {
+    background-color: blue;
+}
+
+#computerCastle {
+    background-color: red;
+}
+/* flex-direction: column; */
+/* justify-content: center; */
+/* grid-column-start: 2; */
+/* grid-column: ; */
+/* align-items: center; */
+/* grid-column: 1/6; */
+/* display: flex; */
+/* justify-content: center; */
+/* flex-direction: column; */
+/* grid-template-columns: repeat(5, 1fr); */
+/* max-width: 1440px; */
+/* height: fit-content; */
