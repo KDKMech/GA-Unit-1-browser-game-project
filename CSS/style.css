@@ -55,6 +55,11 @@ body {
 
 #playerCastle {
     background-color: blue;
+    background-image: url('/SRCIMG/castl1.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    
 }
 
 #computerCastle {
