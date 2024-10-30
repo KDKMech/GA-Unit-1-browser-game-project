@@ -1,5 +1,5 @@
 body {
-    /* background-image: url('/SRCIMG/graassland.png'); */
+    background-image: url('/SRCIMG/BattlegroundField.png');
     display: grid;
     grid-template-rows: 1fr 1fr;
     background-position: center;

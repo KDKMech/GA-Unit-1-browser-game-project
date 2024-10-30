@@ -1,19 +1,24 @@
 // consts
 
 const quitButtonElement = document.getElementById(`quitButton`)
-const menuContainerElement = document.getElementById(`mainMenu`)
+const mainMenuContainerElement = document.getElementById(`mainMenuContainer`)
 const bodyElement = document.getElementById(`body`)
 const creditsButtonElement = document.getElementById(`creditsButton`)
 const startGameButtonElement = document.getElementById(`startGameButton`)
+const gameContainerElement = document.getElementById(`gameContainer`)
+const mainMenuAreaElement = document.getElementById(`mainMenuArea`)
+const computerCastleElement = document.getElementById(`computerCastle`)
+const playerCastleElement = document.getElementById(`playerCastle`)
 // variables========================================================================================================
 
 
 
 // tests==========================================================================================
 console.dir(quitButtonElement)
-console.dir(menuContainerElement)
+console.dir(mainMenuContainerElement)
 console.dir(bodyElement)
 console.dir(creditsButtonElement)
+console.dir(gameContainerElement)
 
 
 // Functions=======================================================================================================
@@ -24,11 +29,60 @@ quitGame = () => { ////////should close the game window//// Tested MT
 credits = () => {/////////// appends dev name to menu /// Tested MT
     const devs = document.createElement(`h1`)
     devs.innerHTML = `Miles Tarricone`
-    menuContainerElement.appendChild(devs)
+    mainMenuAreaElement.appendChild(devs)
+}
+createGameUI = (topSpacerElement) => {
+    let playerHP = 100
+    let computerHP = 100
+    const playerHPElement = document.createElement(`h1`)
+    const computerHPElement = document.createElement(`h1`)
+    const attackButton = document.createElement(`button`)
+    const repairButton = document.createElement(`button`)
+    
+    attackButton.innerHTML = `Attack!`
+    repairButton.innerHTML = `Repair!`
+    playerHPElement.innerHTML = `${playerHP}`
+    computerHPElement.innerHTML = `${computerHP}`
+    topSpacerElement.appendChild(playerHPElement)
+    topSpacerElement.appendChild(computerHPElement)
+    topSpacerElement.appendChild(attackButton)
+    topSpacerElement.appendChild(repairButton)
+    
+    
+    // Event listeners for game state========================================================
+    attackButton.addEventListener(`click`, () => {
+        console.log(`attack button test`)
+        computerHP -= damage()
+        computerHPElement.innerHTML = computerHP
+    })
+    repairButton.addEventListener(`click`, () => {
+        console.log(`repair button test`)
+        playerHP += repairNumber()
+        playerHPElement.innerHTML = playerHP
+    })
+
+    // functions in game UI =====================================================================================================
 }
 startGame = () => {
-    //todo
-    console.log(`test`)
+    //todo// I want this to delet the menu and add the health indicators plaus the attack buttons
+    const topSpacerElement = document.createElement(`div`)
+    bodyElement.insertBefore(topSpacerElement, gameContainerElement)
+    console.log(`testbeginning`)
+    mainMenuAreaElement.removeChild(mainMenuContainerElement)
+    createGameUI(topSpacerElement)
+}
+
+
+damage = () => {
+    let damagenum = (Math.floor(Math.random() * 8) * 3);
+    console.log(damagenum);
+    return damagenum;
+}
+
+repairNumber = () => {
+    let num = (Math.floor(Math.random() * 8) * 3);
+    console.log(num);
+    return num;
 }
 
 //event handlera==================================================================================================================
@@ -39,9 +93,9 @@ quitButtonElement.addEventListener(`click`, () => {
 creditsButtonElement.addEventListener(`click`, () => {
     credits()
 })
-
-startGameButtonElement,addEventListener(`click`, () => {
+startGameButtonElement.addEventListener(`click`, () => {
     startGame()
 })
+
 //Dead code==================================================================================
 // quitGame() tested
