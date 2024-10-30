@@ -27,13 +27,15 @@ quitGame = () => { ////////should close the game window//// Tested MT
     window.close()
 }
 credits = () => {/////////// appends dev name to menu /// Tested MT
+    
     const devs = document.createElement(`h1`)
     devs.innerHTML = `Miles Tarricone`
     mainMenuAreaElement.appendChild(devs)
 }
-createGameUI = (topSpacerElement) => {
+createGameUI = (topSpacerElement) => {//this holds most of the game
     let playerHP = 100
     let computerHP = 100
+    const maxHP = 100
     const playerHPElement = document.createElement(`h1`)
     const computerHPElement = document.createElement(`h1`)
     const attackButton = document.createElement(`button`)
@@ -54,10 +56,14 @@ createGameUI = (topSpacerElement) => {
         console.log(`attack button test`)
         computerHP -= damage()
         computerHPElement.innerHTML = computerHP
+        computerAction(computerHP, computerHPElement, playerHP, playerHPElement)
     })
     repairButton.addEventListener(`click`, () => {
         console.log(`repair button test`)
         playerHP += repairNumber()
+        if (playerHP > maxHP) {
+            playerHP = maxHP
+        }
         playerHPElement.innerHTML = playerHP
     })
 
@@ -71,7 +77,30 @@ startGame = () => {
     mainMenuAreaElement.removeChild(mainMenuContainerElement)
     createGameUI(topSpacerElement)
 }
+computerAction = (computerHP, computerHPElement, maxHP, playerHP, playerHPElement) => {////// what do I want out of computer function: random choice of whether the computer should repair or attack. If computer HP is max, then Dont repair. 
 
+    let computerChoice = (Math.floor(Math.random) * 3)
+    console.log(computerChoice);
+    
+    // if (computerHP === maxHP) {
+    //     computerAttack(playerHP, playerHPElement)
+    // }
+    // else if () {
+
+    // }
+    
+}
+computerAttack = (playerHP, playerHPElement) => {
+    console.log(`computer is attacking`);
+    playerHP -= damage()
+    playerHPElement.innerHTML = playerHP
+}
+computerRepair = (computerHP, computerHPElement) => {
+    console.log(`computer is repairing`);
+    computerHP += repairNumber()
+    computerHPElement.innerHTML = computerHP
+
+}
 
 damage = () => {
     let damagenum = (Math.floor(Math.random() * 8) * 3);
@@ -99,3 +128,4 @@ startGameButtonElement.addEventListener(`click`, () => {
 
 //Dead code==================================================================================
 // quitGame() tested
+// computerAttack(playerHP, playerHPElement)
