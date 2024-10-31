@@ -28,6 +28,10 @@ quitGame = () => { ////////should close the game window//// Tested MT
 }
 credits = () => {/////////// appends dev name to menu /// Tested MT
     
+
+
+    // fix the credits button. all H1 should vanish after clicking starg game
+    
     const devs = document.createElement(`h1`)
     devs.innerHTML = `Miles Tarricone`
     mainMenuAreaElement.appendChild(devs)
@@ -115,6 +119,12 @@ createGameUI = (topSpacerElement) => {//this holds most of the game
         let num = (Math.floor(Math.random() * 8) * 3);
         console.log(num);
         return num;
+    }
+
+    endGame = () => {
+        // todo
+
+
     }
 }
 startGame = () => {
