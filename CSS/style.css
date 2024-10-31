@@ -50,12 +50,12 @@ body {
 .castle {
     height: 50vh;
     width: 20vw;
-    background-color: black;
+    background-color: transparent;
 }
 
 #playerCastle {
-    background-color: blue;
-    background-image: url('/SRCIMG/castl1.png');
+    background-color: null;
+    background-image: url('/SRCIMG/castl1-removebg-preview.png');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -63,7 +63,17 @@ body {
 }
 
 #computerCastle {
-    background-color: red;
+    background-color: null;
+    background-image: url('/SRCIMG/castl1-removebg-preview.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.gameMenuContainer {
+    display: flex;
+    flex-direction: column;
+    
 }
 /* flex-direction: column; */
 /* justify-content: center; */
