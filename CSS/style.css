@@ -32,6 +32,11 @@ body {
     flex-direction: column;
     gap: 10px;
 }
+#menuList button {
+    background-color: brown;
+    border-color: darkgrey;
+    border-width: 5px;
+}
 
 
 
@@ -72,18 +77,36 @@ body {
 
 .gameMenuContainer {
     display: flex;
-    flex-direction: column;
-    /* justify-content: space-between; */
+    justify-content: space-between;
     align-items: center;
     gap: 10px;
     
 }
+.playerSide {
+    display: flex;
+    flex-direction: column;
+    gap: 5px
+    ;
+}
+
+.button {
+    background-color: brown;
+    border-color: darkgrey;
+    border-width: 5px;
+}
+/* 
+.gameMenu {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+} */
 /* flex-direction: column; */
 /* justify-content: center; */
 /* grid-column-start: 2; */
 /* grid-column: ; */
 /* align-items: center; */
 /* grid-column: 1/6; */
+/* flex-direction: column; */
 /* display: flex; */
 /* justify-content: center; */
 /* flex-direction: column; */
